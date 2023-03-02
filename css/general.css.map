@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "general.css",
+	"sources": [
+		"../sass/general.scss",
+		"../sass/variables.scss"
+	],
+	"names": [],
+	"mappings": "ACCA,YAAY;AAOZ,UAAU;ADNV,AAAA,IAAI,CAAC;EACH,gBAAgB,ECAR,OAAkB;EDC1B,WAAW,ECKA,SAAS,EAAE,UAAU;EDJhC,SAAS,ECSE,QAAQ;EDRnB,WAAW,ECKA,GAAG;EDJd,KAAK,ECDG,OAAgB;EDExB,OAAO,EAAE,IAAI;EAEb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,UAAU,CAAC;EACT,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;CACpB"
+}

@@ -1,0 +1,19 @@
+/* COLORS */
+/* TYPE */
+body {
+  background-color: #ecf2f8;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: #48556a;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsImdlbmVyYWwuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLFdBQUE7QUFPQSxTQUFBO0FDTkE7RUFDRSx5QkRBMEI7RUNDMUIsa0NES2dDO0VDSmhDLG1CRFNtQjtFQ1JuQixnQkRLYztFQ0pkLGNERHdCO0VDRXhCLGFBQWE7RUFFYixhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQ0FyQjs7QURHQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUNBckIiLCJmaWxlIjoiZ2VuZXJhbC5jc3MifQ== */

@@ -1,0 +1,302 @@
+/* COLORS */
+/* TYPE */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* COLORS */
+/* TYPE */
+body {
+  background-color: #ecf2f8;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: #48556a;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 327px;
+  background-color: white;
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ----- FIRST CHILDREN ----- */
+.card__image {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card__information {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card__information .card__title {
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+.card__information .card__description {
+  letter-spacing: 0.12px;
+  color: #6e8098;
+}
+
+/* ----- SECOND CHILDREN ----- */
+.card__user {
+  position: relative;
+}
+
+.card__user .shareButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s;
+}
+
+.card__user .shareButton path {
+  transition: fill 0.5s;
+}
+
+.card__user .shareButton:hover {
+  background-color: #6e8098;
+}
+
+.card__user .shareButton:hover path {
+  fill: white;
+}
+
+.card__user .shareButton.active {
+  background-color: #6e8098;
+}
+
+.card__user .shareButton.active path {
+  fill: white;
+}
+
+.user__data, .user__socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.user__data .user__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.user__data .user__name {
+  font-weight: 700;
+  letter-spacing: 0.12px;
+}
+
+.user__data .user__time {
+  color: #9daec2;
+  letter-spacing: 0.12px;
+}
+
+.user__socials {
+  background-color: #48556a;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+}
+
+.user__socials .user__share {
+  text-transform: uppercase;
+  color: #9daec2;
+  letter-spacing: 5px;
+  margin-right: 5px;
+}
+
+/* ----- SHARING BOX TOGGLE ----- */
+.visible {
+  transform: translateY(-100%);
+  animation: show 0.5s;
+}
+
+@keyframes show {
+  from {
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  transform: translateY(0);
+  animation: hide 0.5s;
+}
+
+@keyframes hide {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+/* ----- MEDIA ----- */
+@media (min-width: 800px) {
+  .card {
+    max-width: 730px;
+    max-height: 280px;
+    flex-direction: row;
+    gap: 0;
+    overflow: visible;
+  }
+  .card__image {
+    height: auto;
+    max-width: 285px;
+    border-radius: 10px 0 0 10px;
+  }
+  .card__content {
+    padding: 32px 40px;
+  }
+  .card__information {
+    padding: 0;
+    margin: 0;
+  }
+  .card__information .card__title {
+    font-size: 1.25rem;
+    letter-spacing: 0.25px;
+  }
+  .card__user .shareButton {
+    right: 0;
+  }
+  .user__data {
+    margin-top: 20px;
+    padding: 0;
+  }
+  .user__socials {
+    padding: 18px 36px;
+    box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    top: -75px;
+    right: -110px;
+  }
+  .user__socials ::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    height: 0;
+    width: 0;
+    border-top: 12px solid #48556a;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+  }
+  /* ----- SHARING BOX TOGGLE ----- */
+  .user__socials {
+    transform: scale(0);
+    transform-origin: bottom;
+  }
+  .visible {
+    transform: scale(1);
+    animation: show 0.4s;
+  }
+  @keyframes show {
+    0% {
+      transform: scale(0);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
+  .hidden {
+    transform: scale(0);
+    animation: hide 0.4s;
+  }
+  @keyframes hide {
+    from {
+      transform: scale(1);
+    }
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL3Jlc2V0LnNjc3MiLCJzdHlsZS5jc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsIi4uL3Nhc3Mvc3R5bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxXQUFBO0FBT0EsU0FBQTtBQ1JBOztDQ0lDO0FEREQ7RUFDRSxzQkFBc0I7QUNHeEI7O0FEREE7O0NDS0M7QURGRDtFQUNFLFNBQVM7QUNJWDs7QURGQTs7Q0NNQztBREhEO0VBQ0UsWUFBWTtBQ0tkOztBREhBOzs7O0NDU0M7QURKRDtFQUNFLGdCQUFnQjtFQUNoQixtQ0FBbUM7QUNNckM7O0FESkE7O0NDUUM7QURMRDtFQUNFLGNBQWM7RUFDZCxlQUFlO0FDT2pCOztBRExBOztDQ1NDO0FETkQ7RUFDRSxhQUFhO0FDUWY7O0FETkE7O0NDVUM7QURQRDtFQUNFLHlCQUF5QjtBQ1MzQjs7QURQQTs7Q0NXQztBRFJEO0VBQ0Usa0JBQWtCO0FDVXBCOztBRjNEQSxXQUFBO0FBT0EsU0FBQTtBR05BO0VBQ0UseUJIQTBCO0VHQzFCLGtDSEtnQztFR0poQyxtQkhTbUI7RUdSbkIsZ0JIS2M7RUdKZCxjSER3QjtFR0V4QixhQUFhO0VBRWIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7QUQ4RHJCOztBQzNEQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUQ4RHJCOztBRTNFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsU0FBUztFQUVULGdCQUFnQjtFQUVoQix1QkpUMEI7RUlVMUIsNkRBQTZEO0VBQzdELG1CQUFtQjtFQUNuQixnQkFBZ0I7QUY0RWxCOztBRXpFQSwrQkFBQTtBQUVBO0VBQ0UsYUFBYTtFQUNiLG9CQUFpQjtLQUFqQixpQkFBaUI7QUYyRW5COztBRXhFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsU0FBUztFQUNULG1CQUFtQjtBRjJFckI7O0FFL0VBO0VBT0ksZUpoQmtCO0VJaUJsQixx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 */

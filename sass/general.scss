@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+body {
+  background-color: $clr-200;
+  font-family: $ff-regular;
+  font-size: $fs-regular;
+  font-weight: $fw-regular;
+  color: $clr-500;
+  padding: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
